@@ -11,23 +11,24 @@
   <body>
     <nav>ARTIA.jr | a small project management system</nav>
 
-    <form>
-      <label for="p-name">Nome do Projeto</label>
-      <input id="p-name" class="p-name" type="text" required>
+    <form id="form">
+      <label for="name">Nome do Projeto</label>
+      <input id="name" class="name" type="text" required>
 
-      <label for="p-initial-data">Data de Início</label>
-      <input id="p-initial-data" class="p-initial-data" type="date" required>
+      <label for="initialData">Data de Início</label>
+      <input id="initialData" class="initialData" type="date" required>
 
-      <label for="p-final-data">Data de Finalização</label>
-      <input id="p-final-data" class="p-final-data" type="date" required>
+      <label for="finalData">Data de Finalização</label>
+      <input id="finalData" class="finalData" type="date" required>
 
       <label for="finalized">Finalizada</label>
-      <input id="finalized" class="p-final-data" type="checkbox">
+      <input id="finalized" class="finalized" type="checkbox">
      
       <div>
-        <button type="button" id="b-submit">Cadastrar</button>
+        <button type="submit" id="b-submit">Cadastrar</button>
         <button type="button" id="b-cancel">Cancelar</button>
         <button type="button" id="b-delete">Deletar</button>
+        <button type="button" id="b-submit-a">Cadastrar atividade</button>
       </div>      
     </form>
 
@@ -37,7 +38,11 @@
     <table id="a-table">
     </table>
 
-  <script src="js/main.js"></script>
+    <ul>
+    </ul>
+
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
   </body>
 
 </html>
