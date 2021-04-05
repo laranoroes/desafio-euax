@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charser="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Desafio Grupo Euax</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body>
+    <nav>ARTIA.jr | a small project management system</nav>
+
+    <form>
+      <label for="p-name">Nome do Projeto</label>
+      <input id="p-name" class="p-name" type="text" required>
+
+      <label for="p-initial-data">Data de Início</label>
+      <input id="p-initial-data" class="p-initial-data" type="date" required>
+
+      <label for="p-final-data">Data de Finalização</label>
+      <input id="p-final-data" class="p-final-data" type="date" required>
+
+      <label for="finalized">Finalizada</label>
+      <input id="finalized" class="p-final-data" type="checkbox">
+     
+      <div>
+        <button type="button" id="b-submit">Cadastrar</button>
+        <button type="button" id="b-cancel">Cancelar</button>
+        <button type="button" id="b-delete">Deletar</button>
+      </div>      
+    </form>
+
+    <table id="p-table">
+    </table>
+
+    <table id="a-table">
+    </table>
+
+  <script src="js/main.js"></script>
+  </body>
+
+</html>
