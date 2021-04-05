@@ -9,37 +9,69 @@
   </head>
 
   <body>
-    <nav>ARTIA.jr | a small project management system</nav>
+    <nav>
+      <div class="title"> 
+        ARTIA.jr
+        <p> a small project management system </p>
+      </div>
+    </nav>
 
-    <form id="form">
-      <label for="name">Nome do Projeto</label>
-      <input id="name" class="name" type="text" required>
+    <form id="form" class="form">
+      <div class="inputs">
+        <div>
+          <label for="name" id="name"></label>
+          <input id="name" class="name" type="text" required>
+        </div>
 
-      <label for="initialData">Data de Início</label>
-      <input id="initialData" class="initialData" type="date" required>
+        <div>
+          <label for="initialData">Data de Início</label>
+          <input id="initialData" class="initialData" type="date" required>
+        </div>
 
-      <label for="finalData">Data de Finalização</label>
-      <input id="finalData" class="finalData" type="date" required>
+        <div>
+          <label for="finalData">Data de Finalização</label>
+          <input id="finalData" class="finalData" type="date" required>
+        </div>
 
-      <label for="finalized">Finalizada</label>
-      <input id="finalized" class="finalized" type="checkbox">
-     
-      <div>
-        <button type="submit" id="b-submit">Cadastrar</button>
+        <div id="finalized">
+          <label for="finalized" class="finalized">Finalizada</label>
+          <input id="finalized" class="finalized" type="checkbox">
+        </div>
+
+      </div>
+
+      <div class="buttons">
+        <button type="submit" id="b-submit">Cadastrar projeto</button>
+        <button type="button" id="b-submit-a">Cadastrar atividade</button>
         <button type="button" id="b-cancel">Cancelar</button>
         <button type="button" id="b-delete">Deletar</button>
-        <button type="button" id="b-submit-a">Cadastrar atividade</button>
-      </div>      
+        </div>      
     </form>
 
-    <table id="p-table">
-    </table>
+    <div class="tabelas">
+      <h2>Projetos Cadastrados</h2>
+      <table id="p-table">
+        <thead class="thead">
+          <td>Id</td>
+          <td>Nome</td>
+          <td>Data Início</td>
+          <td>Data Fim</td>
+          <td>% Completo</td>
+          <td>Atrasado</td>
+        </thead>
+      </table>
 
-    <table id="a-table">
-    </table>
-
-    <ul>
-    </ul>
+      <h2>Atividades Cadastradas</h2>
+      <table id="a-table">
+      <thead class="thead">
+          <td>Projeto</td>
+          <td>Nome</td>
+          <td>Data Início</td>
+          <td>Data Fim</td>
+          <td>Finalizada</td>
+        </thead>
+      </table>
+    </div>
 
   <script type="text/javascript" src="data.js"></script>
   <script type="text/javascript" src="js/main.js"></script>

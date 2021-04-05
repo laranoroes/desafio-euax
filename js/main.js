@@ -7,6 +7,9 @@ const bcancel = document.getElementById("b-cancel");
 const bsubmit = document.getElementById("b-submit");
 const form = document.querySelector("form");
 const bsubmitActivity = document.getElementById("b-submit-a");
+const finalized = document.getElementById("finalized");
+const labelNome = document.getElementById("name");
+
 
 function init() {
   renderData();
@@ -15,7 +18,10 @@ function init() {
   bsubmitActivity.addEventListener("click", onSubmitActivity);
   //bdelete.addEventListener("click", onDelete);
   bsubmitActivity.style.display = "none";
+  finalized.style.display = "none";
+  labelNome.textContent = "Nome do Projeto";
 };
+
 
 function onSubmit(evt) {
   evt.preventDefault();
@@ -59,10 +65,16 @@ function renderData() {
     tdDateI.textContent = projeto.dataInicio;
     const tdDateF = document.createElement("td");
     tdDateF.textContent = projeto.dataFim;
+    const completo = document.createElement("td");
+    completo.textContent = "100%";
+    const atrasado = document.createElement("td");
+    atrasado.textContent = "Sim";
     tr.appendChild(tdId);
     tr.appendChild(tdName);
     tr.appendChild(tdDateI);
     tr.appendChild(tdDateF);
+    tr.appendChild(completo);
+    tr.appendChild(atrasado);
     tr.classList.add("new-table1");
     listProject.appendChild(tr);
     tr.addEventListener("click", () => selectItem(projeto, tr));
@@ -74,10 +86,23 @@ function selectItem(projeto, tr) {
   clearSelection();
   selectedItem = projeto;
   selectedItemId = projeto.id;
+  selectedItemNome = projeto.nome;
   tr.classList.add("selected");
   renderDataActivities(); 
   bsubmitActivity.style.display = "inline";
   bsubmit.style.display = "none";
+  labelNome.textContent = "Nome da Atividade";
+};
+
+function selectItemActivity(atividade, tr) {
+  clearSelectionActivity();
+  selectedItem2 = atividade;
+  tr.classList.add("selected"); 
+  bsubmitActivity.style.display = "inline";
+  bsubmit.style.display = "none";
+  finalized.style.display = "inline";
+  labelNome.textContent = "Nome da Atividade";
+  preencheTabela(atividade);
 };
 
 //remover seleção
@@ -90,6 +115,22 @@ function clearSelection() {
   clearTableActivities();
   bsubmitActivity.style.display = "none";
   bsubmit.style.display = "inline";
+  labelNome.textContent = "Nome do Projeto";
+  finalized.style.display = "none";
+  limpaTabela()
+};
+
+function clearSelectionActivity() {
+  selectedItem2 = undefined;
+  const tr = listActivities.querySelector(".selected");
+  if (tr) {
+    tr.classList.remove("selected");
+  }
+  bsubmitActivity.style.display = "none";
+  bsubmit.style.display = "inline";
+  labelNome.textContent = "Nome do Projeto";
+  finalized.style.display = "none";
+  limpaTabela()
 };
 
 function clearTableActivities() {
@@ -114,21 +155,24 @@ function renderDataActivities() {
     if (atividade.idProjeto == selectedItemId){
       const trA = document.createElement("tr");
       const tdIdA = document.createElement("td");
-      tdIdA.textContent = atividade.id;
+      tdIdA.textContent = selectedItemNome;
       const tdNameA = document.createElement("td");
       tdNameA.textContent = atividade.nome;
       const tdDateInitA = document.createElement("td");
       tdDateInitA.textContent = atividade.dataInicio;
       const tdDateFinalA = document.createElement("td");
       tdDateFinalA.textContent = atividade.dataFim;
+      const finalizada = document.createElement("td");
+      finalizada.textContent = "Não";
       trA.appendChild(tdIdA);
       trA.appendChild(tdNameA);
       trA.appendChild(tdDateInitA);
       trA.appendChild(tdDateFinalA);
+      trA.appendChild(finalizada);
       trA.classList.add("new-table");
       listActivities.appendChild(trA);
-    }   
-    //let role = roles.find((role) => role.id == employee.role_id);
+      trA.addEventListener("click", () => selectItemActivity(atividade, trA));
+    } 
   }
 };
 
@@ -142,6 +186,18 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
           this[i].parentElement.removeChild(this[i]);
       }
   }
+}
+
+function preencheTabela(elemento) {
+  form.name.value = elemento.nome;
+  form.initialData.value = elemento.dataInicio
+  form.finalData.value = elemento.dataFim;
+}
+
+function limpaTabela() {
+  form.name.value = "";
+  form.initialData.value = "";
+  form.finalData.value = "";
 }
 
 init();
