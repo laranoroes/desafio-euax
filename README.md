@@ -2,6 +2,8 @@
 
 Solução para o desafio Web Developer proposto pelo Grupo Euax. O sistema consiste em um CRUD para cadastro de projetos e atividades (com nome, data de início e data de finalização). O sistema deve ser capaz de informar a porcentagem realizada de cada projeto e, também, se está finalizado, observando dados das atividades. 
 
+Para acessar o sistema: [https://laranoroes.github.io/desafio-euax/] 
+
 ## Tecnologias
 
 * HTML5
