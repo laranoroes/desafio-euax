@@ -21,28 +21,32 @@
       "idProjeto": "1",
       "nome": "Atividade 1",
       "dataInicio": "2021-04-08",
-      "dataFim": "2021-04-08"
+      "dataFim": "2021-04-08",
+      "finalizada": "Sim",
     },
     {
       "id": "2",
       "idProjeto": "1",
       "nome": "Atividade 2",
-      "dataInicio": "2021-04-08",
-      "dataFim": "2021-04-08"
+      "dataInicio": "2021-04-10",
+      "dataFim": "2021-04-10",
+      "finalizada": "Não"
     },
     {
       "id": "3",
       "idProjeto": "2",
       "nome": "Atividade 3",
       "dataInicio": "2021-04-08",
-      "dataFim": "2021-04-08"
+      "dataFim": "2021-04-08",
+      "finalizada": "Sim"
     },
     {
       "id": "4",
       "idProjeto": "2",
       "nome": "Atividade 4",
       "dataInicio": "2021-04-08",
-      "dataFim": "2021-04-08"
+      "dataFim": "2021-04-08",
+      "finalizada": "Sim"
     }
   ]
 }

@@ -158,6 +158,6 @@ h2 {
   border-bottom: 1px solid #3e5492;
   font-size: 1em;
   padding: 10px;
-  cursor:auto;
+  cursor: pointer;
   text-align: center;
 }
