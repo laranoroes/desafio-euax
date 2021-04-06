@@ -143,6 +143,11 @@ h2 {
   text-align: center;
 }
 
+.new-table1:hover {
+  background-color: #3e5492;
+  color: white;
+}
+
 #a-table {
   grid-column: 2;
   margin-bottom: 75px;
@@ -160,4 +165,9 @@ h2 {
   padding: 10px;
   cursor: pointer;
   text-align: center;
+}
+
+.new-table:hover {
+  background-color: #3e5492;
+  color: white;
 }
